@@ -1,9 +1,0 @@
-admin:
-    name:prince
-    pwd:yourhighness
-user:
-    name:ndome
-    pwd:ndome12345
-    but you can add new user
-for test
-    run: python manage.py test
