@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container mt-5">
+    <h2>Order Details</h2>
+    <p><strong>Order ID:</strong> {{ order.id }}</p>
+    <p><strong>Date:</strong> {{ order.date }}</p>
+    <p><strong>Total Amount:</strong> {{ order.total_amount }}</p>
+    <p><strong>Status:</strong> {{ order.status }}</p>
+    <hr>
+    <h3>Ordered Items:</h3>
+    <ul>
+        {% for item in order.items.all %}
+        <li>{{ item.book.title }} - Quantity: {{ item.quantity }}</li>
+        {% endfor %}
+    </ul>
+</div>
+{% endblock %}

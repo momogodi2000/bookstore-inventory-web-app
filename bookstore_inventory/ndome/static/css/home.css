@@ -1,0 +1,45 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f8f9fa;
+}
+
+.navbar {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.header {
+    background: url("{% static 'img/download.jpeg' %}") no-repeat center center;
+    background-size: cover;
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.header h1 {
+    font-size: 3.5rem;
+}
+
+.features .col-md-4 {
+    margin-top: 30px;
+}
+
+.features i {
+    transition: transform 0.3s;
+}
+
+.features i:hover {
+    transform: scale(1.1);
+}
+
+.about {
+    background-color: #e9ecef;
+}
+
+footer {
+    background: #343a40;
+    color: white;
+    padding: 1rem 0;
+}
+
+footer p {
+    margin: 0;
+}

@@ -1,0 +1,76 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bookstore Inventory</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{% static 'css/home.css' %}">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <a class="navbar-brand" href="#">Bookstore Inventory</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'login' %}">Login</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'register' %}">Register</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <header class="header bg-light text-center py-5">
+        <div class="container">
+            <h1 class="display-4">Welcome to Bookstore Inventory System</h1>
+            <p class="lead mt-4">Efficiently manage your bookstore inventory with ease.</p>
+            <a class="btn btn-primary btn-lg mt-3" href="{% url 'register' %}" role="button">Get Started</a>
+        </div>
+    </header>
+
+    <section class="features py-5 bg-white text-center">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <i class="fas fa-book fa-3x text-primary mb-3"></i>
+                    <h3>Track Your Books</h3>
+                    <p>Keep detailed records of your books, including title, author, ISBN, price, and stock quantity.</p>
+                </div>
+                <div class="col-md-4">
+                    <i class="fas fa-user fa-3x text-primary mb-3"></i>
+                    <h3>Manage Authors</h3>
+                    <p>Maintain comprehensive information about authors and their biographies.</p>
+                </div>
+                <div class="col-md-4">
+                    <i class="fas fa-shopping-cart fa-3x text-primary mb-3"></i>
+                    <h3>Process Orders</h3>
+                    <p>Handle orders efficiently with the ability to track multiple books in each order.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="about py-5 bg-light">
+        <div class="container text-center">
+            <h2>About Us</h2>
+            <p class="lead mt-3">Bookstore Inventory is designed to help bookstore owners and managers keep their inventory organized and up-to-date. Our system provides all the tools you need to manage books, authors, and orders in one place. Whether you run a small bookstore or a large library, our system makes inventory management simple and efficient.</p>
+        </div>
+    </section>
+
+    <footer class="bg-dark text-white text-center py-4">
+        <p>&copy; 2024 Bookstore Inventory. All rights reserved ndome.</p>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <script src="{% static 'js/home.js' %}"></script>
+</body>
+</html>

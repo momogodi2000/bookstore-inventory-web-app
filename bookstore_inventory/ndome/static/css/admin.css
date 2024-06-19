@@ -1,0 +1,30 @@
+/* admin.css */
+body {
+    background: url("{% static 'img/download.jpeg' %}") no-repeat center center fixed;
+    background-size: cover;
+    color: #fff;
+}
+
+.navbar-brand {
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+.jumbotron {
+    background: rgba(0, 0, 0, 0.5);
+    padding: 2rem 1rem;
+}
+
+.card {
+    border: none;
+    transition: transform 0.3s;
+}
+
+.card:hover {
+    transform: scale(1.05);
+}
+
+.card-img-top {
+    height: 200px;
+    object-fit: cover;
+}

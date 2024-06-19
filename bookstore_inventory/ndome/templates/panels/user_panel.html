@@ -1,0 +1,90 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Panel</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{% static 'css/panel.css' %}">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="#">User Panel</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'logout' %}">Logout</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <div class="container mt-5">
+        <div class="row">
+            <div class="col-md-4">
+                <div class="card text-center">
+                    <img class="card-img-top" src="{% static 'img/user.png' %}" alt="User Profile">
+                    <div class="card-body">
+                        <h3 class="card-title">Welcome, {{ user.username }}!</h3>
+                        <p class="card-text">Email: {{ user.email }}</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-8">
+                <div class="row">
+                    <div class="col-md-6 mb-4">
+                        <div class="card shadow-sm h-100">
+                            <img class="card-img-top" src="{% static 'img/mof.jpeg' %}" alt="Books">
+                            <div class="card-body">
+                                <h4 class="card-title">Books</h4>
+                                <p class="card-text">View and order books from our collection.</p>
+                                <a href="{% url 'book_list_user' %}" class="btn btn-primary btn-block">View Books</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 mb-4">
+                        <div class="card shadow-sm h-100">
+                            <img class="card-img-top" src="{% static 'img/book2.jpeg' %}" alt="Orders">
+                            <div class="card-body">
+                                <h4 class="card-title">Orders</h4>
+                                <p class="card-text">Place orders for books here.</p>
+                                <a href="{% url 'order_create' %}" class="btn btn-primary btn-block">Place Order</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-12 mb-4">
+                        <div class="card shadow-sm h-100">
+                            <img class="card-img-top" src="{% static 'img/order.png' %}" alt="Order History">
+                            <div class="card-body">
+                                <h4 class="card-title">Order History</h4>
+                                <p class="card-text">View your past orders and track their status.</p>
+                                <a href="{% url 'order_history' %}" class="btn btn-primary btn-block">Order History</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-12 mb-4">
+                        <div class="card shadow-sm h-100">
+                            <img class="card-img-top" src="{% static 'img/user.png' %}" alt="Profile Settings">
+                            <div class="card-body">
+                                <h4 class="card-title">Profile Settings</h4>
+                                <p class="card-text">Update your profile and account settings.</p>
+                                <a href="#" class="btn btn-primary btn-block">Profile Settings</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer class="bg-dark text-white text-center py-3 mt-5">
+        <p>&copy; 2024 Bookstore Inventory. All rights reserved.</p>
+    </footer>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+</body>
+</html>

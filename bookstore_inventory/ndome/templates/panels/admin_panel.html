@@ -1,0 +1,83 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Panel</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{% static 'css/admin.css' %}">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="#">Bookstore Admin Panel</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="#"><span class="badge badge-danger">3</span> <i class="fas fa-bell"></i></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#"><i class="fas fa-star"></i></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'logout' %}">Logout</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <div class="container mt-5">
+        <div class="jumbotron text-center bg-transparent">
+            <h1 class="display-4 text-white">Welcome, {{ user.username }}!</h1>
+            <p class="lead text-white">{{ user.email }}</p>
+            <hr class="my-4 bg-white">
+            <p class="text-white">Manage the bookstore inventory here. Use the navigation below to manage books, authors, and users in the bookstore inventory.</p>
+        </div>
+        <div class="row">
+            <div class="col-md-4 mb-4">
+                <div class="card shadow-sm">
+                    <img class="card-img-top" src="{% static 'img/book.jpeg' %}" alt="Books">
+                    <div class="card-body">
+                        <h5 class="card-title">Bookstore Inventory</h5>
+                        <p class="card-text">Manage your book collection by adding, updating, or removing books.</p>
+                        <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                        <a href="{% url 'book_list' %}" class="btn btn-primary btn-block">Manage Books</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="card shadow-sm">
+                    <img class="card-img-top" src="{% static 'img/book2.jpeg' %}" alt="Authors">
+                    <div class="card-body">
+                        <h5 class="card-title">Authors</h5>
+                        <p class="card-text">Manage your author list by adding, updating, or removing authors.</p>
+                        <p class="card-text"><small class="text-muted">Last updated 10 mins ago</small></p>
+                        <a href="{% url 'author_list' %}" class="btn btn-primary btn-block">Manage Authors</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="card shadow-sm">
+                    <img class="card-img-top" src="{% static 'img/user.png' %}" alt="Users">
+                    <div class="card-body">
+                        <h5 class="card-title">Users</h5>
+                        <p class="card-text">Manage your user list by adding, updating, or removing users.</p>
+                        <p class="card-text"><small class="text-muted">Last updated 5 mins ago</small></p>
+                        <a href="{% url 'user_list' %}" class="btn btn-primary btn-block">Manage Users</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer class="bg-dark text-white text-center py-3">
+        <p>&copy; 2024 Bookstore Inventory. All rights reserved.</p>
+    </footer>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <script src="{% static 'js/admin.js' %}"></script>
+</body>
+</html>
